@@ -1,0 +1,7 @@
+error: no rules expected the token `"LICENSE"`
+ --> tests/ui/fail/missing_comma_after_map.rs:8:9
+  |
+7 |         }
+  |          - help: missing comma here
+8 |         "LICENSE": "MIT"
+  |         ^^^^^^^^^ no rules expected this token in macro call

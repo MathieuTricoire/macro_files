@@ -1,0 +1,7 @@
+error: no rules expected the token `".gitignore"`
+ --> tests/ui/fail/missing_comma.rs:6:9
+  |
+5 |         "README.md": "# Title"
+  |                               - help: missing comma here
+6 |         ".gitignore": "/target"
+  |         ^^^^^^^^^^^^ no rules expected this token in macro call

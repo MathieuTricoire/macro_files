@@ -1,0 +1,5 @@
+error: no rules expected the token `~`
+ --> tests/ui/fail/parse_expr.rs:5:22
+  |
+5 |         "README.md": ~
+  |                      ^ no rules expected this token in macro call

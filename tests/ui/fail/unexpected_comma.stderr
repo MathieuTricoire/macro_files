@@ -1,0 +1,5 @@
+error: no rules expected the token `,`
+ --> tests/ui/fail/unexpected_comma.rs:5:20
+  |
+5 |         "README.md",
+  |                    ^ no rules expected this token in macro call

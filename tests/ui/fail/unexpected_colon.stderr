@@ -1,0 +1,5 @@
+error: no rules expected the token `:`
+ --> tests/ui/fail/unexpected_colon.rs:5:9
+  |
+5 |         : "# Title"
+  |         ^ no rules expected this token in macro call

@@ -1,0 +1,7 @@
+error: unexpected end of macro invocation
+ --> tests/ui/fail/missing_colon.rs:4:5
+  |
+4 |     create!({ "README.md" });
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^ missing tokens in macro arguments
+  |
+  = note: this error originates in the macro `$crate::create_internal` (in Nightly builds, run with -Z macro-backtrace for more info)

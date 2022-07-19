@@ -1,0 +1,5 @@
+error[E0425]: cannot find value `readme` in this scope
+ --> tests/ui/fail/not_found.rs:4:28
+  |
+4 |     create!({ "README.md": readme });
+  |                            ^^^^^^ not found in this scope

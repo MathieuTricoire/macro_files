@@ -1,0 +1,22 @@
+[package]
+name = "macro_files"
+version = "0.1.0"
+description = "Macro consuming JSON like data structures to create directories and files at runtime."
+authors = ["Mathieu Tricoire <mathieu@tricoi.re>"]
+license = "MIT OR Apache-2.0"
+homepage = "https://github.com/MathieuTricoire/macro_files"
+repository = "https://github.com/MathieuTricoire/macro_files"
+readme = "README.md"
+categories = ["filesystem"]
+keywords = ["fs", "filesystem", "file", "directory", "macros"]
+edition = "2018"
+rust-version = "1.36"
+
+[dependencies]
+tempfile = { version = "3.3", optional = true }
+
+[dev-dependencies]
+trybuild = "1.0"
+
+[features]
+default = ["tempfile"]
