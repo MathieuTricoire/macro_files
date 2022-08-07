@@ -69,8 +69,8 @@ fn temp() {
 
 #[derive(Hash, PartialEq, Eq, Debug)]
 enum Entry {
-    Dir(String),
-    File(String, Vec<u8>),
+    Dir(PathBuf),
+    File(PathBuf, Vec<u8>),
 }
 
 impl Entry {
@@ -89,13 +89,13 @@ fn get_entries(path: &Path, relative_path: &Path) -> HashSet<Entry> {
         let entry_path = entry.unwrap().path();
         let relative_path = relative_path.join(entry_path.strip_prefix(path).unwrap());
         if entry_path.is_dir() {
-            entries.insert(Entry::Dir(relative_path.to_string_lossy().to_string()));
+            entries.insert(Entry::Dir(relative_path.clone()));
             for entry in get_entries(&entry_path, &relative_path) {
                 entries.insert(entry);
             }
         } else if entry_path.is_file() {
             entries.insert(Entry::File(
-                relative_path.to_string_lossy().to_string(),
+                relative_path,
                 std::fs::read(entry_path).unwrap(),
             ));
         }
