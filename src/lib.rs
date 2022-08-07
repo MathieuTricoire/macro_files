@@ -24,20 +24,7 @@ macro_rules! create {
 /// Create directories and files within a temporary directory living the time
 /// the returned `tempfile::TempDir` lives.
 ///
-/// # Example
-///
-/// ```rust
-/// let temp_dir = macro_files::create_temp!({
-///    "README.md": "# Project name",
-///    "LICENSE": "MIT",
-/// }).unwrap();
-///
-/// let file_contents = std::fs::read(temp_dir.path().join("README.md")).unwrap();
-/// assert_eq!(
-///     String::from_utf8_lossy(&file_contents),
-///     "# Project name"
-/// );
-/// ```
+/// For an example see [library documentation](self)
 #[cfg(feature = "tempfile")]
 #[macro_export]
 macro_rules! create_temp {
@@ -170,7 +157,7 @@ macro_rules! create_internal {
         $crate::create_unexpected!($curly_bracket)
     };
 
-    // Munch a token into a path.
+    // TT muncher, parse a path.
     (@entry $dir_path:ident ($($path:tt)*) ($tt:tt $($rest:tt)*) ($($copy:tt)*)) => {
         $crate::create_internal!(@entry $dir_path ($($path)* $tt) ($($rest)*) ($($rest)*))
     };

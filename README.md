@@ -16,7 +16,9 @@ macro_files = "0.1"
 
 Version requirement: rustc 1.36+
 
-## Example
+## Examples
+
+Create directories and files
 
 ```rust
 fn project_readme(project_name: &str) -> String {
@@ -45,7 +47,7 @@ assert_eq!(
     "MIT"
 );
 
-// Macro expanded as:
+// Macro expands as:
 // {
 //     #[allow(unused_variables)]
 //     let path = ::std::path::PathBuf::default();
@@ -77,6 +79,26 @@ assert_eq!(
 // }
 ```
 
+Create directories and files within a temporary directory.
+
+_This requires the default feature `tempfile` that uses the [`tempfile`] crate._
+
+The macro will return a [`tempfile::TempDir`] struct, the temporary directory will lives as long as
+the returned [`tempfile::TempDir`] struct is not dropped (see documentation).
+
+```rust
+let temp_dir = macro_files::create_temp!({
+   "README.md": "# Project name",
+   "LICENSE": "MIT",
+}).unwrap();
+
+let file_contents = std::fs::read(temp_dir.path().join("README.md")).unwrap();
+assert_eq!(
+    String::from_utf8_lossy(&file_contents),
+    "# Project name"
+);
+```
+
 ---
 
 ## License
@@ -93,3 +115,7 @@ at your option.
 Unless you explicitly state otherwise, any contribution intentionally submitted
 for inclusion in the work by you, as defined in the Apache-2.0 license, shall
 be dual licensed as above, without any additional terms or conditions.
+
+[`macro_files::create_temp`]: https://docs.rs/macro_files/latest/macro_files/macro.create_temp.html
+[`tempfile`]: https://crates.io/crates/tempfile
+[`tempfile::TempDir`]: https://docs.rs/tempfile/3.3.0/tempfile/struct.TempDir.html
