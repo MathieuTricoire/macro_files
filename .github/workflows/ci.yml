@@ -9,7 +9,7 @@ jobs:
       matrix:
         rust-version:
           - nightly
-          - "1.36"
+          - "1.54"
         os:
           - ubuntu-latest
           - windows-latest
