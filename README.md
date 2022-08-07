@@ -1,7 +1,7 @@
 # macro_files
 
 [![doc](https://img.shields.io/badge/docs.rs-macro_files-191f26?logo=docs.rs)](https://docs.rs/macro_files)
-[![minimum rustc 1.54.0](https://img.shields.io/badge/minimum%20rustc-1.54.0-f74c00?logo=rust)](https://blog.rust-lang.org/2018/12/06/Rust-1.54-and-rust-2018.html)
+[![minimum rustc 1.56.0](https://img.shields.io/badge/minimum%20rustc-1.56.0-f74c00?logo=rust)](https://blog.rust-lang.org/2018/12/06/Rust-1.56-and-rust-2018.html)
 [![version](https://img.shields.io/crates/v/macro_files?color=3b6837&logo=rust)](https://crates.io/crates/macro_files)
 [![GitHub MathieuTricoire/macro_files](https://img.shields.io/badge/GitHub-MathieuTricoire%2Fmacro_files-9b88bb?logo=github)](https://github.com/MathieuTricoire/macro_files)
 
@@ -14,7 +14,7 @@ _Macro consuming JSON like data structures to create directories and files at ru
 macro_files = "0.1"
 ```
 
-Version requirement: rustc 1.54+
+Version requirement: rustc 1.56+
 
 ## Examples
 

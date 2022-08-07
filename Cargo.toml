@@ -10,7 +10,7 @@ readme = "README.md"
 categories = ["filesystem"]
 keywords = ["fs", "filesystem", "file", "directory", "macros"]
 edition = "2018"
-rust-version = "1.54"
+rust-version = "1.56"
 
 [dependencies]
 tempfile = { version = "3.3", optional = true }
