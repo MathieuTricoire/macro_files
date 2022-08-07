@@ -1,0 +1,33 @@
+on: [push, pull_request]
+
+name: CI
+
+jobs:
+  build_and_test:
+    name: Test Suite
+    strategy:
+      matrix:
+        rust-version:
+          - nightly
+          - "1.36"
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ matrix.rust-version }}
+          default: true
+      - name: Build
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+      - name: Test
+        uses: actions-rs/cargo@v1
+        with:
+          command: test

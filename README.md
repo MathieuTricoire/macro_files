@@ -116,6 +116,5 @@ Unless you explicitly state otherwise, any contribution intentionally submitted
 for inclusion in the work by you, as defined in the Apache-2.0 license, shall
 be dual licensed as above, without any additional terms or conditions.
 
-[`macro_files::create_temp`]: https://docs.rs/macro_files/latest/macro_files/macro.create_temp.html
 [`tempfile`]: https://crates.io/crates/tempfile
 [`tempfile::TempDir`]: https://docs.rs/tempfile/3.3.0/tempfile/struct.TempDir.html
