@@ -22,7 +22,7 @@ Create directories and files
 
 ```rust
 fn project_readme(project_name: &str) -> String {
-    format!("# {project_name}")
+    format!("# {}", project_name)
 }
 let project_name = "Project name".to_string();
 let adr_directory = "adr";
