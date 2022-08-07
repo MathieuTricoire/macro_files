@@ -16,7 +16,8 @@ rust-version = "1.56"
 tempfile = { version = "3.3", optional = true }
 
 [dev-dependencies]
-trybuild = "1.0"
+rustversion = "1.0"
+trybuild = { version = "1.0", features = ["diff"] }
 
 [features]
 default = ["tempfile"]
